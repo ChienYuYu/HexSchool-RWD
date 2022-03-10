@@ -1,0 +1,904 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ---css reset end------------------------------- */
+*{
+    box-sizing: border-box;
+}
+.container{
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+}
+/* --.header------------------------------ */
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.75);
+    position: absolute;
+    top: 0;
+    z-index: 3;
+}
+.header h1 a{ /*logo*/
+    display: block;
+    width: 120px;
+    height: 24px;
+    background-image: url(../images/logo_w@svg.svg);
+    text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 16px 42px;
+}
+.header-menu{ /*桌機選單*/
+    display: flex;
+    margin-right: 33px;
+}
+.header-menu a{ /*特色 主廚 地圖...*/
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    transition: .3s;
+}
+.header-menu a:hover{
+    background: #f50;
+}
+/* ----手機 按鈕 選單↓--------- */
+/* 漢堡 */
+.menu-btn{/*手機漢堡按鈕*/
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    margin-right: 10px;
+    display:none;
+    position:relative;
+    top: 0;
+}
+  .menu-btn:before{/*漢堡肉*/
+    content:"";
+    display:block;
+    width: 40px;
+    height: 4px;
+    background: #fff;
+    border-radius:15%;
+    position:absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    box-shadow:0 15px 0 #fff, 0 -15px 0 #fff;
+    transition:.5s;
+}
+  .menu-btn:after{/*漢堡肉*/
+    content:"";
+    display:block;
+    width: 40px;
+    height: 4px;
+    background: #fff;
+    border-radius:15%;
+    position:absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    transition:.5s;
+}
+/* xx按鈕 */
+.close .menu-btn:before{ /*jQuery toggleClass動態新增class .close*/
+    transform:rotate(45deg);
+    box-shadow:none;
+     background: #f50;
+}
+ .close .menu-btn:after{ /*jQuery toggleClass動態新增class .close*/
+    transform:rotate(135deg);
+    background: #f50;
+}
+.mobile-menu{ /*手機選單*/
+    display: none;
+    position: absolute;
+    top: 56px;
+    background: rgba(0,0,0,0.9);
+    width: 100vw;
+    height: 100vh;
+}
+.mobile-menu a{ /*手機選單 首頁/菜單/註冊/登入 */
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 30px 10px;
+    font-size: 27px;
+    border-bottom: 1px dashed #fff;
+    text-align: center;
+}
+@media (max-width:430px) {
+    .header h1 a{
+        margin: 16px 10px;
+    }
+    .header-menu{
+        display: none;
+    }
+    .menu-btn{
+        display: block;
+        margin-right: 12px;
+    }
+}
+/* --.banner------------------------------ */
+.banner{
+    position: relative;
+}
+.banner img{/*banner照片*/
+    width: 100%;
+    height: 420px;
+    object-fit:cover;
+    vertical-align: bottom;
+}
+.banner-title{/*圖片中間文字那塊*/
+    width: 460px;
+    /* border:1px solid #ff0; */
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    position: absolute;
+    top:123px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 20px;
+}
+.banner-title h2{ /*咬一口就無法忘懷的漢堡*/
+    font-size: 36px;
+    padding: 6px 0;
+}
+.banner-title h2:nth-child(2){ /*手機板-咬一口就無法忘懷的漢堡*/
+    display: none;
+}
+.banner-title p{ /*七夕絕對無法錯過的好滋味...*/
+    line-height: 1.5;
+    padding: 5px 0;
+}
+@media (max-width:430px) {
+    .banner img{
+        object-position:82% 50%;
+    }
+    .banner-title{
+        width: 300px;
+        padding: 5px;
+        line-height: 1.2;
+    }
+    .banner-title h2:nth-child(1){
+        display: none;
+    }
+    .banner-title h2:nth-child(2){
+        display: block;
+    }
+}
+/* --.footer------------------------------ */
+.footer{
+    width: 100%;
+    background: #efe9e7;
+}
+.footer-info{ /*包住ul 跟social-site*/
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 42px;
+}
+.footer-info ul{
+    color: #3D1101;
+}
+.footer-info>ul{ /*第一層ul*/
+    display: flex;
+    line-height: 1.2;
+}
+.footer-info>ul>li{ /*第一層ul底下li*/
+    max-width: 300px;
+    margin-right: 20px;
+}
+.footer-info h3{ /*關於六角西餐廳 、聯絡方式*/
+    font-size: 24px;
+    padding: 16px 0;
+}
+.footer-info li ul{ /*第二層ul*/
+    list-style:disc;
+    padding-left: 16px;
+}
+.footer-info li ul a{ /*電話&email連結*/
+    text-decoration: none;
+    color: #3d1101;
+}
+.footer-info li ul a:hover{
+    color: #d48466;
+}
+.social-site{/*logo跟社群媒體圖標那塊*/
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.social-site img{ /*logo照片*/
+    display: block;
+    margin-bottom: 22px;
+}
+.fa-brands{ /*3個社群媒體icon共同設定*/
+    font-size: 36px;
+    margin-left: 12px;
+}
+.fa-google-plus-square{ /*google+ icon*/
+    color: #DB4437;
+}
+.fa-twitter-square{ /*twitter icon*/
+    color: #41ABE1;
+}
+.fa-facebook-square{ /*facebook icon*/
+    color: #3A5795;
+}
+@media (max-width:820px) {
+    .footer-info{
+        padding: 50px 20px;
+    }
+}
+@media (max-width:430px) {
+    .footer-info{
+        flex-direction: column;
+    }
+    .footer-info>ul{
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+}
+/* --.footer end------------------------------ */
+
+/* index.html */
+/* --.feature------------------------------ */
+.feature{
+    background: #efe9e7;
+    padding: 50px 60px;
+    color: #3d1101;
+}
+.feature h3{ /*客人總是在詢問這麼好吃的秘訣是什麼?*/
+    line-height: 32px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+.feature h3::before, .feature h3::after{/*標題左右兩根*/
+    content: "";
+    width: 90px;
+    height: 1px;
+    background: #979797;
+    position: absolute;
+    top: 50%;
+}
+.feature h3::before{ /*左邊那根*/
+    left: 25%;
+}
+.feature h3::after{ /*右邊那根*/
+    right: 25%;
+}
+.feature ul{ /*含3個li項目*/
+    display: flex;
+    justify-content: space-between;
+}
+.feature img{
+    border-radius: 50%;
+}
+.feature li{ 
+    text-align: center;
+    max-width: 260px;
+}
+.feature h4{ /*台灣本土蔬菜、專業米其林...*/
+    font-size: 18px;
+    margin:20px 0 10px;
+}
+.feature p{ /*h4下面那堆字*/
+    text-align: start;
+    line-height: 1.2;
+    letter-spacing: .13em;
+}
+@media (max-width:820px) {
+    .feature{
+        padding: 50px 25px;
+    }
+    .feature h3::before{
+        left: 20%;
+    }
+    .feature h3::after{
+        right: 20%;
+    }
+    .feature li{
+        max-width: 200px;
+    }
+}
+@media (max-width:430px) {
+    .feature{
+        padding: 50px 5px;
+    }
+    .feature h3::before, .feature h3::after{
+        display: none;
+    }
+    .feature ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature li{
+        margin-bottom: 30px;
+        max-width: 300px;
+    }
+    .feature li p{
+        letter-spacing: 0;
+    }
+}
+/* --.main-chef------------------------------ */
+.main-chef{
+    background: #3d1101;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    line-height: 1.5;
+}
+.main-chef img{/*廚師照片*/
+    width: 50%;
+}
+.main-chef .txt{/*廚師介紹區塊*/
+    width: 50%;
+    margin-left: 25px;
+}
+.main-chef h3{ /*今日主廚：帕金森、梅在帕...*/
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+.main-chef span{
+    font-size: 16px;
+}
+.main-chef p{ /*那一大串文字*/
+    letter-spacing: .2em;
+}
+@media (max-width:820px) {
+    .main-chef{
+        padding: 0 17px 0 0;
+    }
+
+    .main-chef img{
+        width: 373px;
+        height: 460px;
+        object-fit: cover;
+    }
+}
+@media (max-width:430px) {
+    .main-chef{
+        flex-direction: column;
+        padding: 0;
+    }
+    .main-chef img{
+        width:100%;
+        /* height: 460px; */
+        /* object-position: right; */
+    }
+    .main-chef .txt{
+        padding: 30px 0;
+        width: 85%;
+        margin:0;
+    }
+}
+/* --.comment/.card-group/.card/.pic .txt----------- */
+.comment{
+    background: #efe9e7;
+    padding: 50px 40px;
+    color: #3d1101;
+}
+.comment h3{ /*聽聽別人的感想*/
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.card-group{
+    display: flex;
+    justify-content: space-between;
+}
+.card-group .card{
+    margin: 0 10px;
+}
+.card-group .pic{/*頭像姓名區塊*/
+    display: flex;
+    align-items: center;
+}
+.card-group img{ /*大頭照*/
+    border-radius: 50%;
+}
+.card-group .pic h4{ /*高雄一口吃、廟口...*/
+    margin-left: 13px;
+}
+.card-group .txt{ /*心得職稱區塊*/
+    margin-left: 80px;
+}
+.card-group .txt p{
+    padding-bottom: 16px;
+    line-height: 1.5;
+}
+.card-group .txt p:nth-child(2){/*產品經理、金身道士...*/
+    text-align: right;
+}
+@media (max-width:820px) {
+    .comment{
+        padding: 50px 20px;
+    }
+}
+@media (max-width:430px) {
+    .card-group{
+        flex-direction: column;
+    }
+}
+/* --.contact------------------------------ */
+.contact{
+    padding: 50px 40px;
+    background: #fafafa;
+}
+.contact h3{ /*我們的位置不太夠坐
+    要不要先定位呢？*/
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 38px;
+    color: #3d1101;
+    line-height: 1.4;
+}
+.contact-info{ /*包住iframe跟form*/
+    display: flex;
+}
+.contact-info iframe{ /*地圖區塊*/
+    width: 460px;
+    height: 386px;
+    border:1px solid #ccc;
+}
+.contact-info form{  /*表單區塊*/
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 20px;
+}
+.contact-info label{ /*姓名 電話 信箱 人數 是否需要素食 是否*/
+    font-size: 14px;
+    color: #3d1101;
+}
+.contact-info form input{ /*資料輸入*/
+    margin: 6px 0 12px;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border:1px solid #ccc;
+}
+.contact-info .checkbox{/*是&否區塊*/
+    margin-top: 8px;
+}
+.contact-info .checkbox input{/*是&否圓圈圈*/
+    margin-right: 36px;
+}
+
+/* 取消 & 送出按鈕 */
+.contact-info .btn{
+    align-self:flex-end;
+}
+.contact-info .btn input{/*取消 送出 共同設定*/
+    font-size: 14px;
+    margin: 10px;
+    padding: 9px 20px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: .5s;
+}
+.contact-info .btn input:nth-child(1){ /*取消按鈕*/
+    background: #bbb;
+}
+.contact-info .btn input:nth-child(1):hover{
+    background: #aaa;
+}
+.contact-info .btn input:nth-child(2){ /*送出按鈕*/
+    background: #f56c23;
+}
+.contact-info .btn input:nth-child(2):hover{
+    background: #ffae00;
+}
+/* index.html 首頁-聯絡我們 平板手機*/
+@media (max-width:820px) {
+    .contact{
+        padding: 50px 15px;
+    }
+    .contact-info iframe{
+        width: 386px;
+    }
+}
+@media (max-width:430px) {
+    .contact-info{
+       flex-direction: column;
+       align-items: center;
+    }
+    .contact-info iframe{
+        width: 95%;
+        height: 386px;
+        margin-bottom: 30px;
+    }
+    .contact-info form{
+        width: 95%;
+        margin: 0;
+    }
+}
+
+/* meal.html  菜單頁*/
+/* --.meal-wrap/ .side-menu .main/------------------------------ */
+.meal-wrap{
+    display: flex;
+    padding: 50px 40px 0;
+    background:#efe9e7;
+    border-bottom: 1px dashed #3d1101;
+    color: #3d1101;
+}
+.side-menu{ /*左邊那塊*/
+    width: 20%;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+.side-menu h3{ /*線上訂購美食*/
+    text-align: center;
+    font-size: 20px;
+}
+.side-menu ul{/*左邊選單*/
+    margin-top: 16px;
+}
+.side-menu ul a{/*全部、只愛吃薯條...*/
+    color: #3d1101;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-bottom: 1px solid #3d1101;
+    letter-spacing: 2px;
+}
+.side-menu a:hover{
+    color: #fff;
+    background: #3d1101;
+}
+.meal-wrap .main{/*右邊那塊*/
+    width: 80%;
+}
+/* --topbar-搜尋欄、結帳去、購物車-- */
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.topbar form{ /*搜尋欄&放大鏡*/
+    display: flex;
+}
+.topbar form input{ /*搜尋欄*/
+    border: 2px solid #3d1101;
+    width: 440px;
+    padding: 8px;
+    font-size: 18px;
+    outline: none;
+    background: #efe9e7;
+}
+.topbar button{ /*放大鏡*/
+    background: #3d1101;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.topbar .pay{ /*結帳去&購物車*/
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.topbar .pay a{
+    text-decoration: none;
+    color: #3d1101;
+    padding-right: 16px;
+}
+.topbar .pay a:nth-child(2){/*購物車icon*/
+    font-size: 28px;
+}
+.topbar .pay a:hover{
+    color: #ff5b1f;
+}
+/* --product-card--產品區-- */
+.product-card{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.product-card li{ /*個別產品*/
+    text-align: center;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    width: 220px;
+    box-shadow: 3px 3px 5px #ccc;
+    position: relative;
+}
+.product-card .fa-heart{/*愛心icon*/
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    padding: 5px;
+    cursor: pointer;
+}
+.product-card img{/*產品照片*/
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+.product-card h4{ /*經典漢堡套餐 英俊香腸...*/
+    font-size: 20px;
+    margin: 10px 0;
+}
+.product-card span{
+    font-size: 12px;
+}
+.product-card h4:after{/*經典漢堡套餐 英俊香腸...下面那根線*/
+    content: "";
+    display: block;
+    width: 90px;
+    height: 1px;
+    margin: 8px auto;
+    background: #3d1101;
+}
+.product-card p{ /*價格*/
+    font-size: 20px;
+    font-weight: bold;
+    margin: 16px 0;
+}
+.product-card li a{ /*加入購物車*/
+    text-decoration: none;
+    display: block;
+    width: 90%;
+    margin: 0 auto 10px;
+    color: #ff5e45;
+    border: 2px solid #ff5e45;
+    padding: 5px 0;
+    border-radius: 3px;
+    letter-spacing: .1em;
+    transition: .2s;
+}
+.product-card li a:hover{
+    color: #fff;
+    background: #ff5e45;
+}
+/* meal.html 菜單頁-平板手機*/
+@media (max-width:820px) {
+    .meal-wrap{
+        padding: 50px 10px 0;
+    }
+    .side-menu{
+        width: 30%;
+    }
+    .side-menu ul a{
+        padding: 15px;
+    }
+    .meal-wrap .main{
+        width: 70%;
+    }
+    .topbar form input{
+        width: 310px;
+    }
+    .product-card li{
+        width: 45%;
+    }
+}
+@media (max-width:430px) {
+    .meal-wrap{
+        flex-direction: column;
+    }
+    .side-menu{
+        width: 100%;
+    }
+    .side-menu h3{
+        text-align: left;
+    }
+    .meal-wrap .main{
+        width: 100%;
+    }
+    .topbar{
+        flex-direction: column;
+    }
+    .topbar form{
+        width:100%;
+        margin: 20px 0;
+    }
+    .topbar form input{
+        width: 100%;
+    }
+    .topbar .pay{
+        align-self: flex-end;
+        margin-right:0;
+    }
+    .topbar .pay a{
+        padding-right: 5px;
+    }
+    .product-card li{
+        width: 100%;
+        margin-right: 0;
+    }
+    .product-card img{
+        height: auto;
+    }
+}
+/* login.html 登入頁*/
+/* --.login------------------------------ */
+.login{
+    background: #efe9e7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #3d1101;
+}
+.login h3{ /*六角西餐廳享受美食好味道*/
+    font-size: 48px;
+    line-height: 30px;
+    padding-top: 50px;
+    margin-bottom: 35px;
+    text-align: center;
+    font-weight: bold;
+}
+.login span{
+    font-size: 20px;
+}
+.login form{ /*輸入登入資料那塊*/
+    box-shadow: 2px 2px 5px #bbb;
+    padding: 15px;
+    border-top: 3px solid #ff5e45;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login form h4{ /*LOGIN*/
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+.login form label{/* Email Address* Password* / 跟註冊頁共用*/
+    display: block;
+    margin-top: 16px;
+    padding: 5px 0;
+}
+.login form input{ /*輸入mail 密碼的欄位 / 跟註冊頁共用*/
+    margin: 3px 0;
+    display: block;
+    width: 270px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.login form input:focus{
+    outline: 1px solid #ff5e45;
+}
+.login form a{ /*忘記密碼 / 已經有帳號了 / 跟註冊頁共用*/
+    text-decoration: none;
+    color: #ff5e45;
+    font-size: 14px;
+}
+.login form a:hover{
+    color: #ff9689
+}
+.login form .btn{ /*註冊登入按鈕那塊*/
+    margin-top: 30px;
+}
+.login button{ /*按鈕共同設定 / 跟註冊頁共用*/
+    font-size: 14px;
+    padding: 6px 48px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+.login button:nth-child(1){/*註冊按鈕*/
+    background: #999    ;
+}
+.login button:nth-child(1):hover{
+    background: #aaa;
+}
+.login button:nth-child(2){/*登入按鈕*/
+    background: #f56c23;
+}
+.login button:nth-child(2):hover{
+    background: #ff8474;
+}
+/* login.html 登入頁-手機*/
+@media (max-width:430px) {
+    .login form{
+        width: 90%;
+    }
+    .login button{
+        padding: 6px 40px;
+        margin: 8px;
+    }
+}
+/* register.html 註冊頁*/
+/* --.redister------------------------------ */
+.register form{
+    width: 620px;
+}
+.register h4{
+    margin-bottom: 16px; /*REGISTER*/
+}
+.register form .wrap{
+    display: flex;
+}
+.register .declaration{ /*條款那塊*/
+    margin: 10px;
+}
+.register .declaration p{ /*條款內容*/
+    line-height: 1.3;
+}
+.register .info{  /*輸入註冊資料那塊*/
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.register .info label{/*跟登入頁.login form label共用，覆寫margin-top*/
+    margin-top: 0;
+}
+.register .info button{ /*註冊按鈕*/
+    background: #f56c23;
+    width: 125px;
+    align-self:flex-end;
+    margin-top: 30px;
+}
+.register .info button:hover{
+    background: #ff8474;
+}
+/* register.html 註冊頁-手機*/
+@media (max-width:430px) {
+    .register form{
+        width: 90%;
+    }
+    .register .wrap{
+        flex-direction: column;
+        align-items: center;
+    }
+}
