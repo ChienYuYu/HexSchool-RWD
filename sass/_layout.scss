@@ -1,0 +1,246 @@
+.wrapper {
+    width: 100%;
+    position: relative;
+    .banner {
+        background: #000;
+        .container {
+            @include mw1024;
+            height: 420px;
+            position: relative;
+            background-image: url(../images/header_desktop.png);
+            background-position: 82% 50%;
+            .header {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: rgba(0, 0, 0, 0.75);
+                position: absolute;
+                top: 0;
+                z-index: 3;
+                h1 a {
+                    /*logo*/
+                    display: block;
+                    width: 120px;
+                    height: 24px;
+                    background-image: url(../images/logo_w@svg.svg);
+                    @include hide-text;
+                    margin: 16px 42px;
+                    @include mobile767 {
+                        margin: 16px 10px;
+                    }
+                }
+                .header-menu {
+                    display: flex;
+                    margin-right: 33px;
+                    a {
+                        /*特色 主廚 地圖...*/
+                        display: block;
+                        text-decoration: none;
+                        color: #fff;
+                        padding: 15px;
+                        border-radius: 5px;
+                        transition: 0.3s;
+                    }
+                    a:hover {
+                        background: $color-orange;
+                    }
+                    @include mobile767 {
+                        display: none;
+                    }
+                }
+                //mobile---------------
+                .menu-btn {
+                    /*手機漢堡按鈕*/
+                    width: 40px;
+                    height: 40px;
+                    background: transparent;
+                    margin-right: 10px;
+                    display: none;
+                    position: relative;
+                    top: 0;
+                    @include mobile767 {
+                        display: block;
+                        margin-right: 12px;
+                    }
+                }
+                .menu-btn::before {
+                    /*漢堡肉*/
+                    content: "";
+                    display: block;
+                    width: 40px;
+                    height: 4px;
+                    background: #fff;
+                    border-radius: 15%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    box-shadow: 0 15px 0 #fff, 0 -15px 0 #fff;
+                    transition: 0.5s;
+                }
+                .menu-btn::after {
+                    /*漢堡肉*/
+                    content: "";
+                    display: block;
+                    width: 40px;
+                    height: 4px;
+                    background: #fff;
+                    border-radius: 15%;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    transition: 0.5s;
+                }
+                .mobile-menu {
+                    /*手機選單*/
+                    display: none;
+                    position: absolute;
+                    top: 56px;
+                    background: rgba(0, 0, 0, 0.9);
+                    width: 100vw;
+                    height: 100vh;
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        display: block;
+                        padding: 30px 10px;
+                        font-size: 27px;
+                        border-bottom: 1px dashed #fff;
+                        text-align: center;
+                    }
+                }
+            }
+            .close .menu-btn::before {
+                /* xx按鈕 */
+                /*jQuery toggleClass動態新增class .close*/
+                transform: rotate(45deg);
+                box-shadow: none;
+                background: $color-orange;
+            }
+            .close .menu-btn::after {
+                /* xx按鈕 */
+                /*jQuery toggleClass動態新增class .close*/
+                transform: rotate(135deg);
+                background: $color-orange;
+            }
+            .banner-title {
+                width: 460px;
+                background: rgba(0, 0, 0, 0.35);
+                color: #fff;
+                position: absolute;
+                top: 123px;
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                padding: 20px;
+                @include mobile767 {
+                    width: 300px;
+                    padding: 5px;
+                    line-height: 1.2;
+                }
+                h2 {
+                    /*咬一口就無法忘懷的漢堡*/
+                    font-size: 36px;
+                    padding: 6px 0;
+                    @include mobile767 {
+                        display: none;
+                    }
+                }
+                h2:nth-child(2) {
+                    /*手機板-咬一口就無法忘懷的漢堡*/
+                    display: none;
+                    @include mobile767 {
+                        display: block;
+                    }
+                }
+                p {
+                    /*七夕絕對無法錯過的好滋味...*/
+                    line-height: 1.5;
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
+    .footer {
+        background: $color-secondary;
+        .container {
+            @include mw1024;
+            display: flex;
+            justify-content: space-between;
+            padding: 50px 42px;
+            @include pad {
+                padding: 50px 20px;
+            }
+            @include mobile767 {
+                flex-direction: column;
+            }
+            ul {
+                color: $color-primary;
+            }
+            > ul {
+                display: flex;
+                line-height: 1.2;
+                @include mobile767 {
+                    flex-direction: column;
+                    margin-bottom: 30px;
+                }
+            }
+            > ul > li {
+                max-width: 300px;
+                margin-right: 20px;
+                h3 {
+                    /*關於六角西餐廳 、聯絡方式*/
+                    font-size: 24px;
+                    padding: 16px 0;
+                }
+                ul {
+                    /*第二層ul*/
+                    list-style: disc;
+                    padding-left: 16px;
+                    a {
+                        /*電話&email連結*/
+                        text-decoration: none;
+                        color: $color-primary;
+                    }
+                    a:hover {
+                        color: $color-orange;
+                    }
+                }
+            }
+            .social-site {
+                /*logo跟社群媒體圖標那塊*/
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                img {
+                    display: block;
+                    margin-bottom: 22px;
+                }
+                .fa-brands {
+                    /*3個社群媒體icon共同設定*/
+                    font-size: 36px;
+                    margin-left: 12px;
+                }
+                .fa-google-plus-square {
+                    color: #db4437;
+                }
+                .fa-twitter-square {
+                    color: #41abe1;
+                }
+                .fa-facebook-square {
+                    color: #3a5795;
+                }
+            }
+        }
+    }
+    .fa-circle-arrow-up{
+        font-size: 30px;
+        color: $color-orange;
+        padding: 10px;
+        position: fixed;
+        right: 5px;
+        bottom: 5px;
+        z-index: 100;
+        display: none;
+    }
+}

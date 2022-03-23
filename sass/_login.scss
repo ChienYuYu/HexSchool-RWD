@@ -1,0 +1,98 @@
+.login {
+    background: $color-secondary;
+    color: $color-primary;
+    padding-bottom: 5px;
+    h3 {
+        font-size: 48px;
+        line-height: 30px;
+        padding-top: 50px;
+        margin-bottom: 35px;
+        text-align: center;
+        font-weight: bold;
+    }
+    span {
+        font-size: 20px;
+    }
+    form {
+        /*輸入登入資料那塊*/
+        width: 325px;
+        margin: 0 auto;
+        box-shadow: 2px 2px 5px #bbb;
+        padding: 15px;
+        border-top: 3px solid $color-orange;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include mobile767{
+            width: 94%;
+            padding: 10px 5px;
+        }
+        h4 {
+            /*LOGIN*/
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+        label {
+            /* Email Address* Password* */
+            display: block;
+            margin-top: 16px;
+            padding: 5px 0;
+        }
+        input {
+            /*輸入mail 密碼的欄位 */
+            margin: 3px 0;
+            display: block;
+            width: 270px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            @include mobile767{
+                font-size: 18px;
+            }
+        }
+        input:focus {
+            outline: 1px solid $color-orange;
+        }
+        a {
+            /*忘記密碼 */
+            text-decoration: none;
+            color: $color-orange;
+            font-size: 14px;
+        }
+        a:hover {
+            color: $color-orange-light;
+        }
+        .btn {
+            margin-top: 30px;
+            button {
+                /*按鈕共同設定 */
+                font-size: 14px;
+                padding: 6px 48px;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                margin: 10px;
+                cursor: pointer;
+                @include mobile767{
+                    padding: 6px 40px;
+                    margin: 8px;
+                }
+            }
+            button:nth-child(1){
+                /*註冊按鈕*/
+                background: $color-grey;
+            }
+            button:nth-child(1):hover{
+                background: $color-grey-light;
+            }
+            button:nth-child(2){
+                /*登入按鈕*/
+                background: $color-orange;
+            }
+            button:nth-child(2):hover{
+                background: $color-orange-light;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+
+$color-primary:#3d1101;
+$color-secondary:#efe9e7;
+
+$color-orange:#ff5e45;
+$color-orange-light:#ff8474;
+$color-grey:#999;
+$color-grey-light:#aaa;
+
+@mixin hide-text {
+    text-indent:101%;
+    white-space:nowrap;
+    overflow:hidden;
+}
+
+@mixin mw1024 {
+    max-width: 1024px;
+    margin: 0 auto;
+}
