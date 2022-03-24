@@ -67,11 +67,11 @@ body {
   position: relative;
 }
 
-.wrapper .banner {
+.banner {
   background: #000;
 }
 
-.wrapper .banner .container {
+.banner .container {
   max-width: 1024px;
   margin: 0 auto;
   height: 420px;
@@ -80,7 +80,7 @@ body {
   background-position: 82% 50%;
 }
 
-.wrapper .banner .container .header {
+.header {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -97,7 +97,7 @@ body {
   z-index: 3;
 }
 
-.wrapper .banner .container .header h1 a {
+.header h1 a {
   /*logo*/
   display: block;
   width: 120px;
@@ -110,19 +110,19 @@ body {
 }
 
 @media (max-width: 767px) {
-  .wrapper .banner .container .header h1 a {
+  .header h1 a {
     margin: 16px 10px;
   }
 }
 
-.wrapper .banner .container .header .header-menu {
+.header .header-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-right: 33px;
 }
 
-.wrapper .banner .container .header .header-menu a {
+.header .header-menu a {
   /*特色 主廚 地圖...*/
   display: block;
   text-decoration: none;
@@ -133,17 +133,17 @@ body {
   transition: 0.3s;
 }
 
-.wrapper .banner .container .header .header-menu a:hover {
+.header .header-menu a:hover {
   background: #ff5e45;
 }
 
 @media (max-width: 767px) {
-  .wrapper .banner .container .header .header-menu {
+  .header .header-menu {
     display: none;
   }
 }
 
-.wrapper .banner .container .header .menu-btn {
+.header .menu-btn {
   /*手機漢堡按鈕*/
   width: 40px;
   height: 40px;
@@ -155,13 +155,13 @@ body {
 }
 
 @media (max-width: 767px) {
-  .wrapper .banner .container .header .menu-btn {
+  .header .menu-btn {
     display: block;
     margin-right: 12px;
   }
 }
 
-.wrapper .banner .container .header .menu-btn::before {
+.header .menu-btn::before {
   /*漢堡肉*/
   content: "";
   display: block;
@@ -179,7 +179,7 @@ body {
   transition: 0.5s;
 }
 
-.wrapper .banner .container .header .menu-btn::after {
+.header .menu-btn::after {
   /*漢堡肉*/
   content: "";
   display: block;
@@ -195,7 +195,7 @@ body {
   transition: 0.5s;
 }
 
-.wrapper .banner .container .header .mobile-menu {
+.header .mobile-menu {
   /*手機選單*/
   display: none;
   position: absolute;
@@ -205,7 +205,7 @@ body {
   height: 100vh;
 }
 
-.wrapper .banner .container .header .mobile-menu a {
+.header .mobile-menu a {
   text-decoration: none;
   color: #fff;
   display: block;
@@ -215,9 +215,12 @@ body {
   text-align: center;
 }
 
-.wrapper .banner .container .close .menu-btn::before {
+.close {
   /* xx按鈕 */
   /*jQuery toggleClass動態新增class .close*/
+}
+
+.close .menu-btn::before {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-box-shadow: none;
@@ -225,15 +228,13 @@ body {
   background: #ff5e45;
 }
 
-.wrapper .banner .container .close .menu-btn::after {
-  /* xx按鈕 */
-  /*jQuery toggleClass動態新增class .close*/
+.close .menu-btn::after {
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
   background: #ff5e45;
 }
 
-.wrapper .banner .container .banner-title {
+.banner-title {
   width: 460px;
   background: rgba(0, 0, 0, 0.35);
   color: #fff;
@@ -247,47 +248,47 @@ body {
 }
 
 @media (max-width: 767px) {
-  .wrapper .banner .container .banner-title {
+  .banner-title {
     width: 300px;
     padding: 5px;
     line-height: 1.2;
   }
 }
 
-.wrapper .banner .container .banner-title h2 {
+.banner-title h2 {
   /*咬一口就無法忘懷的漢堡*/
   font-size: 36px;
   padding: 6px 0;
 }
 
 @media (max-width: 767px) {
-  .wrapper .banner .container .banner-title h2 {
+  .banner-title h2 {
     display: none;
   }
 }
 
-.wrapper .banner .container .banner-title h2:nth-child(2) {
+.banner-title h2:nth-child(2) {
   /*手機板-咬一口就無法忘懷的漢堡*/
   display: none;
 }
 
 @media (max-width: 767px) {
-  .wrapper .banner .container .banner-title h2:nth-child(2) {
+  .banner-title h2:nth-child(2) {
     display: block;
   }
 }
 
-.wrapper .banner .container .banner-title p {
+.banner-title p {
   /*七夕絕對無法錯過的好滋味...*/
   line-height: 1.5;
   padding: 5px 0;
 }
 
-.wrapper .footer {
+.footer {
   background: #efe9e7;
 }
 
-.wrapper .footer .container {
+.footer .container {
   max-width: 1024px;
   margin: 0 auto;
   display: -webkit-box;
@@ -300,13 +301,13 @@ body {
 }
 
 @media (max-width: 810px) {
-  .wrapper .footer .container {
+  .footer .container {
     padding: 50px 20px;
   }
 }
 
 @media (max-width: 767px) {
-  .wrapper .footer .container {
+  .footer .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -314,11 +315,11 @@ body {
   }
 }
 
-.wrapper .footer .container ul {
+.footer .container ul {
   color: #3d1101;
 }
 
-.wrapper .footer .container > ul {
+.footer .container > ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,7 +327,7 @@ body {
 }
 
 @media (max-width: 767px) {
-  .wrapper .footer .container > ul {
+  .footer .container > ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -335,34 +336,34 @@ body {
   }
 }
 
-.wrapper .footer .container > ul > li {
+.footer .container > ul li {
   max-width: 300px;
   margin-right: 20px;
 }
 
-.wrapper .footer .container > ul > li h3 {
+.footer .container > ul h3 {
   /*關於六角西餐廳 、聯絡方式*/
   font-size: 24px;
   padding: 16px 0;
 }
 
-.wrapper .footer .container > ul > li ul {
+.footer .container > ul ul {
   /*第二層ul*/
   list-style: disc;
   padding-left: 16px;
 }
 
-.wrapper .footer .container > ul > li ul a {
+.footer .container > ul ul a {
   /*電話&email連結*/
   text-decoration: none;
   color: #3d1101;
 }
 
-.wrapper .footer .container > ul > li ul a:hover {
+.footer .container > ul ul a:hover {
   color: #ff5e45;
 }
 
-.wrapper .footer .container .social-site {
+.footer .social-site {
   /*logo跟社群媒體圖標那塊*/
   display: -webkit-box;
   display: -ms-flexbox;
@@ -376,30 +377,30 @@ body {
           align-items: flex-end;
 }
 
-.wrapper .footer .container .social-site img {
+.footer .social-site img {
   display: block;
   margin-bottom: 22px;
 }
 
-.wrapper .footer .container .social-site .fa-brands {
+.footer .social-site .fa-brands {
   /*3個社群媒體icon共同設定*/
   font-size: 36px;
   margin-left: 12px;
 }
 
-.wrapper .footer .container .social-site .fa-google-plus-square {
+.footer .social-site .fa-google-plus-square {
   color: #db4437;
 }
 
-.wrapper .footer .container .social-site .fa-twitter-square {
+.footer .social-site .fa-twitter-square {
   color: #41abe1;
 }
 
-.wrapper .footer .container .social-site .fa-facebook-square {
+.footer .social-site .fa-facebook-square {
   color: #3a5795;
 }
 
-.wrapper .fa-circle-arrow-up {
+.fa-circle-arrow-up {
   font-size: 30px;
   color: #ff5e45;
   padding: 10px;
