@@ -35,76 +35,77 @@
             text-align: center;
             margin-bottom: 16px;
         }
-        .wrap {
-            /*包住條款跟輸入資料那塊的容器*/
-            display: flex;
-            @include mobile767{
-                flex-direction: column;
-                align-items: center;
+    }
+    .wrap {
+        /*包住條款跟輸入資料那塊的容器*/
+        display: flex;
+        @include mobile767 {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .declaration {
+        /*條款那塊*/
+        margin: 10px;
+        p {
+            /*條款內容*/
+            line-height: 1.3;
+        }
+    }
+    .info {
+        /*輸入註冊資料那塊*/
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        label {
+            /* Email Address* Password* */
+            display: block;
+            padding: 5px 0;
+        }
+        input {
+            /*輸入mail 密碼的欄位 */
+            margin: 3px 0;
+            display: block;
+            width: 270px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            @include mobile767 {
+                font-size: 18px;
             }
-            .declaration {
-                /*條款那塊*/
-                margin: 10px;
-                p {
-                    /*條款內容*/
-                    line-height: 1.3;
-                }
+            &:focus {
+                outline: 1px solid $color-orange;
             }
-            .info {
-                /*輸入註冊資料那塊*/
-                display: flex;
-                flex-direction: column;
-                margin: 10px;
-                label {
-                    /* Email Address* Password* */
-                    display: block;
-                    padding: 5px 0;
-                }
-                input {
-                    /*輸入mail 密碼的欄位 */
-                    margin: 3px 0;
-                    display: block;
-                    width: 270px;
-                    padding: 10px;
-                    border-radius: 5px;
-                    border: 1px solid #ccc;
-                    @include mobile767 {
-                        font-size: 18px;
-                    }
-                }
-                input:focus {
-                    outline: 1px solid $color-orange;
-                }
-                a {
-                    /*已經有帳號了 */
-                    text-decoration: none;
-                    color: $color-orange;
-                    font-size: 14px;
-                }
-                a:hover {
-                    color: $color-orange-light;
-                }
-                button {
-                    /*註冊按鈕 */
-                    font-size: 14px;
-                    padding: 6px 48px;
-                    color: #fff;
-                    background: $color-orange;
-                    width: 125px;
-                    border: none;
-                    border-radius: 5px;
-                    margin: 10px;
-                    margin-top: 30px;
-                    cursor: pointer;
-                    align-self:flex-end;
-                    @include mobile767 {
-                        padding: 6px 40px;
-                        margin: 8px;
-                    }
-                }
-                button:hover{
-                    background: $color-orange-light;
-                }
+        }
+
+        a {
+            /*已經有帳號了 */
+            text-decoration: none;
+            color: $color-orange;
+            font-size: 14px;
+            &:hover {
+                color: $color-orange-light;
+            }
+        }
+        button {
+            /*註冊按鈕 */
+            font-size: 14px;
+            padding: 6px 48px;
+            color: #fff;
+            background: $color-orange;
+            width: 125px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            margin-top: 30px;
+            cursor: pointer;
+            align-self: flex-end;
+            &:hover{
+                background: $color-orange-light;
+            }
+            @include mobile767 {
+                padding: 6px 40px;
+                margin: 8px;
             }
         }
     }

@@ -1272,7 +1272,7 @@ body {
   margin-bottom: 16px;
 }
 
-.register form .wrap {
+.register .wrap {
   /*包住條款跟輸入資料那塊的容器*/
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1280,7 +1280,7 @@ body {
 }
 
 @media (max-width: 767px) {
-  .register form .wrap {
+  .register .wrap {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -1291,17 +1291,17 @@ body {
   }
 }
 
-.register form .wrap .declaration {
+.register .declaration {
   /*條款那塊*/
   margin: 10px;
 }
 
-.register form .wrap .declaration p {
+.register .declaration p {
   /*條款內容*/
   line-height: 1.3;
 }
 
-.register form .wrap .info {
+.register .info {
   /*輸入註冊資料那塊*/
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1313,13 +1313,13 @@ body {
   margin: 10px;
 }
 
-.register form .wrap .info label {
+.register .info label {
   /* Email Address* Password* */
   display: block;
   padding: 5px 0;
 }
 
-.register form .wrap .info input {
+.register .info input {
   /*輸入mail 密碼的欄位 */
   margin: 3px 0;
   display: block;
@@ -1330,27 +1330,27 @@ body {
 }
 
 @media (max-width: 767px) {
-  .register form .wrap .info input {
+  .register .info input {
     font-size: 18px;
   }
 }
 
-.register form .wrap .info input:focus {
+.register .info input:focus {
   outline: 1px solid #ff5e45;
 }
 
-.register form .wrap .info a {
+.register .info a {
   /*已經有帳號了 */
   text-decoration: none;
   color: #ff5e45;
   font-size: 14px;
 }
 
-.register form .wrap .info a:hover {
+.register .info a:hover {
   color: #ff8474;
 }
 
-.register form .wrap .info button {
+.register .info button {
   /*註冊按鈕 */
   font-size: 14px;
   padding: 6px 48px;
@@ -1366,15 +1366,15 @@ body {
       align-self: flex-end;
 }
 
+.register .info button:hover {
+  background: #ff8474;
+}
+
 @media (max-width: 767px) {
-  .register form .wrap .info button {
+  .register .info button {
     padding: 6px 40px;
     margin: 8px;
   }
-}
-
-.register form .wrap .info button:hover {
-  background: #ff8474;
 }
 
 .login {
@@ -1423,21 +1423,21 @@ body {
   }
 }
 
-.login form h4 {
+.login h4 {
   /*LOGIN*/
   font-size: 18px;
   font-weight: bold;
   text-align: center;
 }
 
-.login form label {
+.login label {
   /* Email Address* Password* */
   display: block;
   margin-top: 16px;
   padding: 5px 0;
 }
 
-.login form input {
+.login input {
   /*輸入mail 密碼的欄位 */
   margin: 3px 0;
   display: block;
@@ -1447,32 +1447,32 @@ body {
   border: 1px solid #ccc;
 }
 
+.login input:focus {
+  outline: 1px solid #ff5e45;
+}
+
 @media (max-width: 767px) {
-  .login form input {
+  .login input {
     font-size: 18px;
   }
 }
 
-.login form input:focus {
-  outline: 1px solid #ff5e45;
-}
-
-.login form a {
+.login a {
   /*忘記密碼 */
   text-decoration: none;
   color: #ff5e45;
   font-size: 14px;
 }
 
-.login form a:hover {
+.login a:hover {
   color: #ff8474;
 }
 
-.login form .btn {
+.login .btn {
   margin-top: 30px;
 }
 
-.login form .btn button {
+.login .btn button {
   /*按鈕共同設定 */
   font-size: 14px;
   padding: 6px 48px;
@@ -1484,27 +1484,27 @@ body {
 }
 
 @media (max-width: 767px) {
-  .login form .btn button {
+  .login .btn button {
     padding: 6px 40px;
     margin: 8px;
   }
 }
 
-.login form .btn button:nth-child(1) {
+.login .btn button:nth-child(1) {
   /*註冊按鈕*/
   background: #999;
 }
 
-.login form .btn button:nth-child(1):hover {
+.login .btn button:nth-child(1):hover {
   background: #aaa;
 }
 
-.login form .btn button:nth-child(2) {
+.login .btn button:nth-child(2) {
   /*登入按鈕*/
   background: #ff5e45;
 }
 
-.login form .btn button:nth-child(2):hover {
+.login .btn button:nth-child(2):hover {
   background: #ff8474;
 }
 /*# sourceMappingURL=all.css.map */

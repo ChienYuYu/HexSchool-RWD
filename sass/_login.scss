@@ -27,72 +27,72 @@
             width: 94%;
             padding: 10px 5px;
         }
-        h4 {
-            /*LOGIN*/
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-        }
-        label {
-            /* Email Address* Password* */
-            display: block;
-            margin-top: 16px;
-            padding: 5px 0;
-        }
-        input {
-            /*輸入mail 密碼的欄位 */
-            margin: 3px 0;
-            display: block;
-            width: 270px;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            @include mobile767{
-                font-size: 18px;
-            }
-        }
-        input:focus {
+    }
+    h4 {
+        /*LOGIN*/
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+    }
+    label {
+        /* Email Address* Password* */
+        display: block;
+        margin-top: 16px;
+        padding: 5px 0;
+    }
+    input {
+        /*輸入mail 密碼的欄位 */
+        margin: 3px 0;
+        display: block;
+        width: 270px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        &:focus{
             outline: 1px solid $color-orange;
         }
-        a {
-            /*忘記密碼 */
-            text-decoration: none;
-            color: $color-orange;
+        @include mobile767{
+            font-size: 18px;
+        }
+    }
+    a {
+        /*忘記密碼 */
+        text-decoration: none;
+        color: $color-orange;
+        font-size: 14px;
+        &:hover{
+            color:$color-orange-light;;
+        }
+    }
+    .btn {
+        margin-top: 30px;
+        button {
+            /*按鈕共同設定 */
             font-size: 14px;
+            padding: 6px 48px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            @include mobile767{
+                padding: 6px 40px;
+                margin: 8px;
+            }
         }
-        a:hover {
-            color: $color-orange-light;
+        button:nth-child(1){
+            /*註冊按鈕*/
+            background: $color-grey;
         }
-        .btn {
-            margin-top: 30px;
-            button {
-                /*按鈕共同設定 */
-                font-size: 14px;
-                padding: 6px 48px;
-                color: #fff;
-                border: none;
-                border-radius: 5px;
-                margin: 10px;
-                cursor: pointer;
-                @include mobile767{
-                    padding: 6px 40px;
-                    margin: 8px;
-                }
-            }
-            button:nth-child(1){
-                /*註冊按鈕*/
-                background: $color-grey;
-            }
-            button:nth-child(1):hover{
-                background: $color-grey-light;
-            }
-            button:nth-child(2){
-                /*登入按鈕*/
-                background: $color-orange;
-            }
-            button:nth-child(2):hover{
-                background: $color-orange-light;
-            }
+        button:nth-child(1):hover{
+            background: $color-grey-light;
+        }
+        button:nth-child(2){
+            /*登入按鈕*/
+            background: $color-orange;
+        }
+        button:nth-child(2):hover{
+            background: $color-orange-light;
         }
     }
 }
