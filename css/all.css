@@ -885,7 +885,7 @@ body {
   }
 }
 
-.meal .container .side-menu {
+.meal .side-menu {
   /*左邊那塊*/
   width: 20%;
   margin-right: 20px;
@@ -893,35 +893,35 @@ body {
 }
 
 @media (max-width: 810px) {
-  .meal .container .side-menu {
+  .meal .side-menu {
     width: 30%;
   }
 }
 
 @media (max-width: 767px) {
-  .meal .container .side-menu {
+  .meal .side-menu {
     width: 100%;
   }
 }
 
-.meal .container .side-menu h3 {
+.meal .side-menu h3 {
   /*線上訂購美食*/
   text-align: center;
   font-size: 20px;
 }
 
 @media (max-width: 767px) {
-  .meal .container .side-menu h3 {
+  .meal .side-menu h3 {
     text-align: left;
   }
 }
 
-.meal .container .side-menu ul {
+.meal .side-menu ul {
   /*左邊選單*/
   margin-top: 16px;
 }
 
-.meal .container .side-menu ul a {
+.meal .side-menu a {
   /*全部、只愛吃薯條...*/
   color: #3d1101;
   text-decoration: none;
@@ -931,35 +931,35 @@ body {
   letter-spacing: 2px;
 }
 
-@media (max-width: 810px) {
-  .meal .container .side-menu ul a {
-    padding: 15px;
-  }
-}
-
-.meal .container .side-menu ul a:hover {
+.meal .side-menu a:hover {
   color: #fff;
   background: #3d1101;
 }
 
-.meal .container .main {
+@media (max-width: 810px) {
+  .meal .side-menu a {
+    padding: 15px;
+  }
+}
+
+.meal .main {
   /*右邊那塊*/
   width: 80%;
 }
 
 @media (max-width: 810px) {
-  .meal .container .main {
+  .meal .main {
     width: 70%;
   }
 }
 
 @media (max-width: 767px) {
-  .meal .container .main {
+  .meal .main {
     width: 100%;
   }
 }
 
-.meal .container .main .topbar {
+.meal .topbar {
   /* --topbar-搜尋欄、結帳去、購物車-- */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -974,7 +974,7 @@ body {
 }
 
 @media (max-width: 767px) {
-  .meal .container .main .topbar {
+  .meal .topbar {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -982,7 +982,7 @@ body {
   }
 }
 
-.meal .container .main .topbar form {
+.meal .topbar form {
   /*搜尋欄&放大鏡*/
   display: -webkit-box;
   display: -ms-flexbox;
@@ -990,13 +990,13 @@ body {
 }
 
 @media (max-width: 767px) {
-  .meal .container .main .topbar form {
+  .meal .topbar form {
     width: 100%;
     margin: 20px 0;
   }
 }
 
-.meal .container .main .topbar form input {
+.meal .topbar input {
   /*搜尋框*/
   border: 2px solid #3d1101;
   width: 440px;
@@ -1007,18 +1007,18 @@ body {
 }
 
 @media (max-width: 810px) {
-  .meal .container .main .topbar form input {
+  .meal .topbar input {
     width: 310px;
   }
 }
 
 @media (max-width: 767px) {
-  .meal .container .main .topbar form input {
+  .meal .topbar input {
     width: 100%;
   }
 }
 
-.meal .container .main .topbar form button {
+.meal .topbar button {
   /*放大鏡*/
   background: #3d1101;
   color: #fff;
@@ -1028,7 +1028,7 @@ body {
   cursor: pointer;
 }
 
-.meal .container .main .topbar .pay {
+.meal .pay {
   /*結帳去&購物車*/
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1040,36 +1040,37 @@ body {
 }
 
 @media (max-width: 767px) {
-  .meal .container .main .topbar .pay {
+  .meal .pay {
     -ms-flex-item-align: end;
         align-self: flex-end;
   }
 }
 
-.meal .container .main .topbar .pay a {
+.meal .pay a {
   text-decoration: none;
   color: #3d1101;
   margin-right: 16px;
 }
 
 @media (max-width: 767px) {
-  .meal .container .main .topbar .pay a {
+  .meal .pay a {
     margin-right: 0;
     padding-right: 5px;
   }
 }
 
-.meal .container .main .topbar .pay a:nth-child(2) {
+.meal .pay a:nth-child(2) {
   /*購物車icon*/
   font-size: 28px;
 }
 
-.meal .container .main .topbar .pay a:hover {
+.meal .pay a:hover {
   color: #ff5e45;
 }
 
-.meal .container .main .product-card {
+.meal .product-card {
   /* --product-card--產品區-- */
+  /* <ul class="product-card"> */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1077,7 +1078,7 @@ body {
       flex-wrap: wrap;
 }
 
-.meal .container .main .product-card li {
+.meal .product-card li {
   /*個別產品*/
   text-align: center;
   margin-right: 20px;
@@ -1089,28 +1090,19 @@ body {
 }
 
 @media (max-width: 810px) {
-  .meal .container .main .product-card li {
+  .meal .product-card li {
     width: 45%;
   }
 }
 
 @media (max-width: 767px) {
-  .meal .container .main .product-card li {
+  .meal .product-card li {
     width: 100%;
     margin-right: 0;
   }
 }
 
-.meal .container .main .product-card li .fa-heart {
-  /*愛心icon*/
-  font-size: 20px;
-  color: #fff;
-  position: absolute;
-  padding: 5px;
-  cursor: pointer;
-}
-
-.meal .container .main .product-card li img {
+.meal .product-card img {
   /*產品照片*/
   width: 100%;
   height: 120px;
@@ -1119,22 +1111,22 @@ body {
 }
 
 @media (max-width: 767px) {
-  .meal .container .main .product-card li img {
+  .meal .product-card img {
     height: auto;
   }
 }
 
-.meal .container .main .product-card li h4 {
+.meal .product-card h4 {
   /*經典漢堡套餐 英俊香腸...*/
   font-size: 20px;
   margin: 10px 0;
 }
 
-.meal .container .main .product-card li h4 span {
+.meal .product-card h4 span {
   font-size: 12px;
 }
 
-.meal .container .main .product-card li h4:after {
+.meal .product-card h4::after {
   /*經典漢堡套餐 英俊香腸...下面那根線*/
   content: "";
   display: block;
@@ -1144,14 +1136,14 @@ body {
   background: #3d1101;
 }
 
-.meal .container .main .product-card li p {
+.meal .product-card p {
   /*價格*/
   font-size: 20px;
   font-weight: bold;
   margin: 16px 0;
 }
 
-.meal .container .main .product-card li a {
+.meal .product-card a {
   /*加入購物車*/
   text-decoration: none;
   display: block;
@@ -1166,12 +1158,21 @@ body {
   transition: 0.2s;
 }
 
-.meal .container .main .product-card li a:hover {
+.meal .product-card a:hover {
   color: #fff;
   background: #ff5e45;
 }
 
-.meal .container .main .product-card li .hot-wrap {
+.meal .fa-heart {
+  /*愛心icon*/
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.meal .hot-wrap {
   /*緞帶*/
   position: absolute;
   width: 73px;
@@ -1181,7 +1182,28 @@ body {
   overflow: hidden;
 }
 
-.meal .container .main .product-card li .hot-wrap .hot {
+.meal .hot-wrap::before {
+  /*左上*/
+  content: "";
+  display: block;
+  position: absolute;
+  border: 5px solid #008866;
+  top: 0px;
+  left: 1px;
+}
+
+.meal .hot-wrap::after {
+  /*右下*/
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  bottom: 1px;
+  border: 5px solid #008866;
+}
+
+.meal .hot-wrap .hot {
   font-size: 14px;
   color: #fff;
   background: #00cc99;
@@ -1194,27 +1216,6 @@ body {
   width: 158px;
   z-index: 10;
   line-height: 1.5;
-}
-
-.meal .container .main .product-card li .hot-wrap:before {
-  /*左上*/
-  content: "";
-  display: block;
-  position: absolute;
-  border: 5px solid #008866;
-  top: 0px;
-  left: 1px;
-}
-
-.meal .container .main .product-card li .hot-wrap:after {
-  /*右下*/
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  bottom: 1px;
-  border: 5px solid #008866;
 }
 
 .register {
