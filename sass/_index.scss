@@ -10,16 +10,16 @@
         @include mobile767 {
             padding: 50px 5px;
         }
-        h3 {
-            /*客人總是在詢問這麼好吃的秘訣是什麼?*/
-            line-height: 32px;
-            font-size: 20px;
-            text-align: center;
-            margin-bottom: 30px;
-            position: relative;
-        }
-        h3:before,
-        h3:after {
+    }
+    h3 {
+        /*客人總是在詢問這麼好吃的秘訣是什麼?*/
+        line-height: 32px;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 30px;
+        position: relative;
+        &::before,
+        &::after {
             /*標題左右兩根*/
             content: "";
             width: 90px;
@@ -31,55 +31,56 @@
                 display: none;
             }
         }
-        h3:before {
+        &::before {
             /*左邊那根*/
             left: 25%;
             @include pad {
                 left: 20%;
             }
         }
-        h3:after {
+        &::after {
             /*右邊那根*/
             right: 25%;
             @include pad {
                 right: 20%;
             }
         }
-        ul {
-            /*含3個li項目*/
-            display: flex;
-            justify-content: space-between;
+    }
+
+    ul {
+        /*含3個li項目*/
+        display: flex;
+        justify-content: space-between;
+        @include mobile767 {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    li {
+        text-align: center;
+        max-width: 260px;
+        @include pad {
+            max-width: 200px;
+        }
+        @include mobile767 {
+            margin-bottom: 30px;
+            max-width: 300px;
+        }
+        img {
+            border-radius: 50%;
+        }
+        h4 {
+            /*台灣本土蔬菜、專業米其林...*/
+            font-size: 18px;
+            margin: 20px 0 10px;
+        }
+        p {
+            /*h4下面那堆字*/
+            text-align: start;
+            line-height: 1.2;
+            letter-spacing: 0.13em;
             @include mobile767 {
-                flex-direction: column;
-                align-items: center;
-            }
-            li {
-                text-align: center;
-                max-width: 260px;
-                @include pad {
-                    max-width: 200px;
-                }
-                @include mobile767 {
-                    margin-bottom: 30px;
-                    max-width: 300px;
-                }
-                img {
-                    border-radius: 50%;
-                }
-                h4 {
-                    /*台灣本土蔬菜、專業米其林...*/
-                    font-size: 18px;
-                    margin: 20px 0 10px;
-                }
-                p {
-                    /*h4下面那堆字*/
-                    text-align: start;
-                    line-height: 1.2;
-                    letter-spacing: 0.13em;
-                    @include mobile767 {
-                        letter-spacing: 0;
-                    }
-                }
+                letter-spacing: 0;
             }
         }
     }
@@ -100,39 +101,39 @@
             flex-direction: column;
             padding: 0;
         }
-        img {
-            /*廚師照片*/
-            width: 50%;
-            @include pad {
-                width: 373px;
-                height: 460px;
-                object-fit: cover;
-            }
-            @include mobile767 {
-                width: 100%;
-            }
+    }
+    img {
+        /*廚師照片*/
+        width: 50%;
+        @include pad {
+            width: 373px;
+            height: 460px;
+            object-fit: cover;
         }
-        .txt {
-            /*廚師介紹區塊*/
-            width: 50%;
-            margin-left: 25px;
-            @include mobile767 {
-                padding: 30px 0;
-                width: 85%;
-                margin: 0;
-            }
-            h3 {
-                /*今日主廚：帕金森、梅在帕...*/
-                font-size: 20px;
-                margin-bottom: 16px;
-            }
-            span {
-                font-size: 16px;
-            }
-            p {
-                /*那一大串文字*/
-                letter-spacing: 0.2em;
-            }
+        @include mobile767 {
+            width: 100%;
+        }
+    }
+    .txt {
+        /*廚師介紹區塊*/
+        width: 50%;
+        margin-left: 25px;
+        @include mobile767 {
+            padding: 30px 0;
+            width: 85%;
+            margin: 0;
+        }
+        h3 {
+            /*今日主廚：帕金森、梅在帕...*/
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        span {
+            font-size: 16px;
+        }
+        p {
+            /*那一大串文字*/
+            letter-spacing: 0.2em;
         }
     }
 }
@@ -142,147 +143,150 @@
         @include mw1024;
         padding: 50px 40px;
         color: $color-primary;
-        @include pad{
+        @include pad {
             padding: 50px 20px;
         }
-        h3 {
-            /*聽聽別人的感想*/
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 30px;
+    }
+    h3 {
+        /*聽聽別人的感想*/
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .card-group {
+        /* <ul class="card-group> */
+        display: flex;
+        justify-content: space-between;
+        @include mobile767 {
+            flex-direction: column;
         }
-        .card-group {
-            display: flex;
-            justify-content: space-between;
-            @include mobile767{
-                flex-direction: column;
-            }
-            .card {
-                margin: 0 10px;
-                .pic {
-                    /*頭像姓名區塊*/
-                    display: flex;
-                    align-items: center;
-                    img {
-                        /*大頭照*/
-                        border-radius: 50%;
-                    }
-                    h4 {
-                        margin-left: 13px;
-                    }
-                }
-                .txt {
-                    margin-left: 80px;
-                    p {
-                        padding-bottom: 16px;
-                        line-height: 1.5;
-                    }
-                    p:nth-child(2){
-                        /*產品經理、金身道士...*/
-                        text-align: right;
-                    }
-                }
-            }
+    }
+    .card {
+        /* <li class="card> */
+        margin: 0 10px;
+    }
+    .pic {
+        /*頭像姓名區塊*/
+        display: flex;
+        align-items: center;
+        img {
+            /*大頭照*/
+            border-radius: 50%;
+        }
+        h4 {
+            /*高雄一口吃 廟口小霸王* 梅川伊芙*/
+            margin-left: 13px;
+        }
+    }
+    .txt {
+        margin-left: 80px;
+        p {
+            padding-bottom: 16px;
+            line-height: 1.5;
+        }
+        p:nth-child(2) {
+            /*產品經理、金身道士、美麗萬分*/
+            text-align: right;
         }
     }
 }
-.contact{
+.contact {
     background: #fafafa;
-    .container{
+    .container {
         @include mw1024;
         padding: 50px 40px;
-        @include pad{
+        @include pad {
             padding: 50px 15px;
         }
-        h3{
-            /*我們的位置不太夠坐要不要先定位呢？*/
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 38px;
-            color: $color-primary;
-            line-height: 1.4;
+    }
+    h3 {
+        /*我們的位置不太夠坐要不要先定位呢？*/
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 38px;
+        color: $color-primary;
+        line-height: 1.4;
+    }
+    .contact-info {
+        /*包住iframe跟form*/
+        display: flex;
+        @include mobile767 {
+            flex-direction: column;
+            align-items: center;
         }
-        .contact-info{
-            /*包住iframe跟form*/
-            display: flex;
-            @include mobile767{
-                flex-direction: column;
-                align-items: center;
-            }
-            iframe{
-                /*地圖區塊*/
-                width: 460px;
-                height: 360px;
-                border: 1px solid #ccc;
-                @include pad{
-                    width: 386px;
-                }
-                @include mobile767{
-                    width: 95%;
-                    height: 386px;
-                    margin-bottom: 30px;
-                }
-            }
-            form{
-                /*表單區塊*/
-                display: flex;
-                flex-direction: column;
-                width: 50%;
-                margin-left: 20px;
-                @include mobile767{
-                    width: 95%;
-                    margin: 0;
-                }
-                label{
-                    /*姓名 電話 信箱 人數 是否需要素食 是否*/
-                    font-size: 14px;
-                    color: $color-primary;
-                }
-                input{
-                    /*資料輸入*/
-                    margin: 6px 0 12px;
-                    font-size: 16px;
-                    padding: 5px 10px;
-                    border-radius: 5px;
-                    border: 1px solid #ccc;
-                }
-                .checkbox{
-                    /*是&否區塊*/
-                    margin-top: 8px;
-                    input{
-                        /*是&否圓圈圈*/
-                        margin-right: 36px;
-                    }
-                }
-                .btn{
-                    /* 取消 & 送出按鈕 */
-                    align-self: flex-end;
-                    input{
-                        /*取消 送出 共同設定*/
-                        font-size: 14px;
-                        margin: 10px;
-                        padding: 9px 20px;
-                        color: #fff;
-                        border: none;
-                        cursor: pointer;
-                        transition: .5s;
-                    }
-                    input:nth-child(1){
-                        /*取消按鈕*/
-                        background: $color-grey;
-                    }
-                    input:nth-child(1):hover{
-                        background: $color-grey-light;
-                    }
-                    input:nth-child(2){
-                        /*送出按鈕*/
-                        background: $color-orange;
-                    }
-                    input:nth-child(2):hover{
-                        background: $color-orange-light;
-                    }
-                }
-            }
+    }
+    iframe {
+        /*地圖區塊*/
+        width: 460px;
+        height: 360px;
+        border: 1px solid #ccc;
+        @include pad {
+            width: 386px;
+        }
+        @include mobile767 {
+            width: 95%;
+            height: 386px;
+            margin-bottom: 30px;
+        }
+    }
+    form {
+        /*表單區塊*/
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin-left: 20px;
+        @include mobile767 {
+            width: 95%;
+            margin: 0;
+        }
+        label {
+            /*姓名 電話 信箱 人數 是否需要素食 是否*/
+            font-size: 14px;
+            color: $color-primary;
+        }
+        input {
+            /*資料輸入*/
+            margin: 6px 0 12px;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    }
+    .checkbox {
+        /*是&否區塊*/
+        margin-top: 8px;
+        input {
+            /*是&否圓圈圈*/
+            margin-right: 36px;
+        }
+    }
+    .btn {
+        /* 取消 & 送出按鈕 */
+        align-self: flex-end;
+        input {
+            /*取消 送出 共同設定*/
+            font-size: 14px;
+            margin: 10px;
+            padding: 9px 20px;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        input:nth-child(1) {
+            /*取消按鈕*/
+            background: $color-grey;
+        }
+        input:nth-child(1):hover {
+            background: $color-grey-light;
+        }
+        input:nth-child(2) {
+            /*送出按鈕*/
+            background: $color-orange;
+        }
+        input:nth-child(2):hover {
+            background: $color-orange-light;
         }
     }
 }
