@@ -59,8 +59,12 @@
     li {
         text-align: center;
         max-width: 260px;
+        @include mobile1000{
+            padding: 10px;
+        }
         @include pad {
             max-width: 200px;
+            padding: 0;
         }
         @include mobile767 {
             margin-bottom: 30px;

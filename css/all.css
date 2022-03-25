@@ -215,12 +215,9 @@ body {
   text-align: center;
 }
 
-.close {
+.close .menu-btn::before {
   /* xx按鈕 */
   /*jQuery toggleClass動態新增class .close*/
-}
-
-.close .menu-btn::before {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
   -webkit-box-shadow: none;
@@ -229,6 +226,8 @@ body {
 }
 
 .close .menu-btn::after {
+  /* xx按鈕 */
+  /*jQuery toggleClass動態新增class .close*/
   -webkit-transform: rotate(135deg);
           transform: rotate(135deg);
   background: #ff5e45;
@@ -508,9 +507,16 @@ body {
   max-width: 260px;
 }
 
+@media (max-width: 1000px) {
+  .feature li {
+    padding: 10px;
+  }
+}
+
 @media (max-width: 810px) {
   .feature li {
     max-width: 200px;
+    padding: 0;
   }
 }
 

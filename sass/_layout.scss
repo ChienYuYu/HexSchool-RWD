@@ -116,18 +116,18 @@
         }
     }
 }
-.close {
+.close .menu-btn::before {
     /* xx按鈕 */
     /*jQuery toggleClass動態新增class .close*/
-    .menu-btn::before {
-        transform: rotate(45deg);
-        box-shadow: none;
-        background: $color-orange;
-    }
-    .menu-btn::after {
-        transform: rotate(135deg);
-        background: $color-orange;
-    }
+    transform: rotate(45deg);
+    box-shadow: none;
+    background: $color-orange;
+}
+.close .menu-btn::after {
+    /* xx按鈕 */
+    /*jQuery toggleClass動態新增class .close*/
+    transform: rotate(135deg);
+    background: $color-orange;
 }
 
 .banner-title {

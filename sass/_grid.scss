@@ -1,3 +1,9 @@
+
+@mixin mobile1000 {
+    @media (max-width:1000px) {
+        @content
+    }
+}
 @mixin pad {
     @media (max-width:810px) {
         @content
